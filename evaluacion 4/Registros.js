@@ -3,6 +3,20 @@ export default class Registros {
         this._num = tareas.num;
         this._tarea =  tareas.tarea.toUpperCase();
         this._final = tareas.final;
+        this._months = [
+            "Ene",
+            "Feb",
+            "Mar",
+            "Abr",
+            "May",
+            "Jun",
+            "Jul",
+            "Ago",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dic"
+        ];
     }
 
     get num(){
@@ -15,7 +29,7 @@ export default class Registros {
     
 
     getFinalAsString(){
-        let d = this._final.getDate()+ "/" + this._final.getMonth() + "/" + this._final.getFullYear();
+        let d = this._final.getDate()+ "/" + this._months[this._final.getMonth()] + "/" + this._final.getFullYear();
         return d;
     }
 
