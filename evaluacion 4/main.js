@@ -24,7 +24,7 @@ class Main {
 
             let tareas = new Registros(objTareas);
 
-            this._agenda._addContacto(tareas);
+            this._agenda.addEmployee2(tareas);
         });
     }
 
