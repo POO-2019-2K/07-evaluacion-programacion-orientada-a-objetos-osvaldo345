@@ -26,8 +26,8 @@ _addEditDeleteToRow(row, tareas) {
     btnDelete.value = 'Eliminar';
     btnDelete.className = 'btn btn-danger';
 
-    row.cells[3].innerHTML = '';
-    row.cells[3].appendChild(btnDelete);
+    row.cells[4].innerHTML = '';
+    row.cells[4].appendChild(btnDelete);
     btnDelete.addEventListener('click', () => {
         this._actividades.splice(tareas, 1);
         row.innerHTML = "";
@@ -43,12 +43,14 @@ _addEditDeleteToRow(row, tareas) {
         let cellnum = row.insertCell(0);
         let cellTarea = row.insertCell(1);
         let cellfinal = row.insertCell(2);
-        row.insertCell(3);
+        let cellDif = row.insertCell(3);
+        row.insertCell(4);
 
 
         cellnum.innerHTML = tareas.num;
         cellTarea.innerHTML = tareas.tarea;
         cellfinal.innerHTML = tareas.getFinalAsString();
+        cellDif.innerHTML = tareas.getAge();
         this._addEditDeleteToRow(row, tareas);
 
 
