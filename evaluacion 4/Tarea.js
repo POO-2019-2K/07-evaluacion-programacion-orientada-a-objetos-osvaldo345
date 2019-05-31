@@ -1,3 +1,5 @@
+import Registros from "./Registros.js"
+
 export default class Tarea {
     constructor(tableAgenda){
         this._tableAgenda = tableAgenda;
@@ -52,7 +54,7 @@ _addEditDeleteToRow(row, tareas) {
 
         let objTareas = {
             num: tareas.num,
-            cel: tareas.cel,
+            tarea: tareas.tarea,
             final: tareas.final,
             correo: tareas.correo,
         }

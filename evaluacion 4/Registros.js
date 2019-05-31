@@ -23,4 +23,11 @@ export default class Registros {
         return this._final;
     }
 
+    ////////////////////calculo de la edad//////////////////////////////
+    getAge() {
+        let oneDay= (24*60*60*1000);
+        let differenceMs = Math.abs(new Date() - this._final);
+        return Math.round(differenceMs / oneDay);
+        }
+
 }
