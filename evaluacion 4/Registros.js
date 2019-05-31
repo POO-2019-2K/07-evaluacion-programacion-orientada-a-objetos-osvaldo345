@@ -1,8 +1,8 @@
 export default class Registros {
-    constructor(Contacto) {
-        this._num = Contacto.num;
-        this._tarea =  Contacto.tarea.toUpperCase();
-        this._final = Contacto.final;
+    constructor(tareas) {
+        this._num = tareas.num;
+        this._tarea =  tareas.tarea.toUpperCase();
+        this._final = tareas.final;
     }
 
     get num(){

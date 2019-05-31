@@ -1,31 +1,32 @@
 export default class Tarea {
     constructor(tableAgenda){
         this._tableAgenda = tableAgenda;
+        
     }
 
 
 
 
     
-    _addContacto(Contacto) {
+    _addContacto(tareas) {
         let row = this._tableAgenda.insertRow(-1);
         let cellnum = row.insertCell(0);
         let cellTarea = row.insertCell(1);
-        let cellBirthday = row.insertCell(2);
+        let cellfinal = row.insertCell(2);
 
 
-        cellnum.innerHTML = Contacto.num;
-        cellTarea.innerHTML = Contacto.tarea;
-        cellBirthday.innerHTML = Contacto.getBirthdayAsString();
+        cellnum.innerHTML = tareas.num;
+        cellTarea.innerHTML = tareas.tarea;
+        cellfinal.innerHTML = tareas.getFinalAsString();
 
 
-        let objContacto = {
-            num: Contacto.num,
-            cel: Contacto.cel,
-            birthday: Contacto.birthday,
-            correo: Contacto.correo,
+        let objTareas = {
+            num: tareas.num,
+            cel: tareas.cel,
+            final: tareas.final,
+            correo: tareas.correo,
         }
-            this._taller2.push(objContacto);
+            this._taller2.push(objTareas);
     }
     
 
