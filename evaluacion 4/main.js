@@ -18,7 +18,7 @@ class Main {
             let objTareas = {
                 num: num,
                 tarea: tarea,
-                final: final,
+                final: final
             }
 
 

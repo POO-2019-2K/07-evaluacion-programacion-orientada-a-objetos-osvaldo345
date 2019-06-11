@@ -129,12 +129,13 @@ export default class Tarea {
         let objTareas = {
             num: tareas.num,
             tarea: tareas.tarea,
-            final: tareas.final,
+            final: tareas.final
         }
         this._actividades.push(objTareas);
     }
 
-    alfabeticamente(a, b) {
+      /////////////////alfabeticamente//////////////////
+    _alfabeticamente(a, b) {
         if (a.tarea < b.tarea) {
             return -1;
         }
@@ -171,11 +172,11 @@ export default class Tarea {
     }
 
 
-    _findId(id) {
+    _findId(num) {
         let found = -1
 
         this._actividades.forEach((tareas, index) => {
-            if (tareas.num === id) {
+            if (tareas.num === num) {
                 found = index;
                 return;
             }
