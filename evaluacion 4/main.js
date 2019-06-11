@@ -12,7 +12,7 @@ class Main {
             sFinal = sFinal.split('-');
 
 
-            let final = new Date(sFinal[0], sFinal[1], sFinal[2]);
+            let final = new Date(sFinal[0], sFinal[1]-1, sFinal[2]);
 
 
             let objTareas = {

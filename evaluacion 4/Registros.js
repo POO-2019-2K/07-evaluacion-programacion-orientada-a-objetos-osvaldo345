@@ -26,6 +26,11 @@ export default class Registros {
     get tarea(){
         return this._tarea;
     }
+
+    get final(){
+        return this._final;
+    }
+
     
 
     getFinalAsString(){
@@ -33,15 +38,12 @@ export default class Registros {
         return d;
     }
 
-    get final(){
-        return this._final;
-    }
-
-    ////////////////////calculo de la edad//////////////////////////////
+   
+    ////////////////////calculo de los dias restantes//////////////////////////////
     getAge() {
         let oneDay = (24 * 60 * 60 * 1000);
 
-        let differenceMs = Math.abs(new Date() - this._final);
-        return Math.round(differenceMs / oneDay);
+        let differenceMs = Math.abs(this._final - new Date());
+        return Math.round(differenceMs / oneDay) + 1;
     }
 }
