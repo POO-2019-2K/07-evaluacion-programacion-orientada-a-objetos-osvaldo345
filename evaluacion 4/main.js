@@ -6,6 +6,8 @@ class Main {
         this._agenda = new Tarea(document.querySelector("#agenda"));
 
         document.querySelector("#btnAdd").addEventListener("click", () => {
+            let form = document.querySelector("#form");
+            if (form.checkValidity() === true) {
             let num = document.querySelector("#num").value;
             let tarea = document.querySelector("#tarea").value;
             let sFinal = document.querySelector("#final").value;
@@ -25,6 +27,8 @@ class Main {
             let tareas = new Registros(objTareas);
 
             this._agenda.addEmployee2(tareas);
+        }
+        form.classList.add("was-validated");
         });
         document.querySelector("#btnNom").addEventListener("click", () => {
             this._agenda.mostrarAlfabeticamente();

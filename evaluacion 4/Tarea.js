@@ -23,15 +23,17 @@ export default class Tarea {
     _cancelEdit(row, tareas) {
         row.cells[0].innerHTML = tareas.num;
         row.cells[1].innerHTML = tareas.tarea;
-        row.cells[2].innerHTML = tareas.getFinalAsString();
+        row.cells[2].innerHTML = tareas.getFechaForDate();
         row.cells[3].innerHTML = tareas.getAge();
+        row.cells[4].innerHTML = "";
+        row.cells[5].innerHTML = "";
         this._addEditDeleteToRow(row, tareas);
     }
 
     _saveEdit(row, tareas, newRegistros) {
         let pos = this._findId(tareas.num);
         this._actividades[pos] = newRegistros;
-        localStorage.setItem('taller', JSON.stringify(this._actividades));
+        localStorage.setItem('actividades', JSON.stringify(this._actividades));
         this._cancelEdit(row, new Registros(newRegistros));
     }
 
@@ -46,7 +48,7 @@ export default class Tarea {
 
         let iDate = document.createElement('input');
         iDate.type = 'date';
-        iDate.value = tareas.getFinalAsString();
+        iDate.value = tareas.getFechaForDate();
 
         let btnSave = document.createElement('input');
         btnSave.type = 'button';
@@ -132,6 +134,7 @@ export default class Tarea {
             final: tareas.final
         }
         this._actividades.push(objTareas);
+        localStorage.setItem("actividades", JSON.stringify(this._actividades));
     }
 
       /////////////////alfabeticamente//////////////////
@@ -186,6 +189,15 @@ export default class Tarea {
 
 
     addEmployee2(tareas) {
+        let found = this._findId(tareas.num);
+        if (found >= 0){
+            swal.fire({
+                type: "error",
+                tittle: "error",
+                text: "esta tarea ya esta registrada"
+            });
+            return;
+        }
         this._addContacto(tareas);
         localStorage.setItem("actividades", JSON.stringify(this._actividades));
         console.log(localStorage.getItem("actividades"));
