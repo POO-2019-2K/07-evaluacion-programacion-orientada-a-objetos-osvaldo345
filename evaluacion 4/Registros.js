@@ -40,7 +40,7 @@ export default class Registros {
 
     getFechaForDate(){
         let { final } = this;
-        let date2 = this._getNumberAsTwoDigits(final.getDate()) + '-' + this._getNumberAsTwoDigits(final.getMonth()+1) + '-' + this._getNumberAsTwoDigits(final.getFullYear());
+        let date2 = this._getNumberAsTwoDigits(final.getDate())+1 + '-' + this._getNumberAsTwoDigits(final.getMonth()+1) + '-' + this._getNumberAsTwoDigits(final.getFullYear());
     return date2;
     }
 
